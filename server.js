@@ -4,27 +4,9 @@ const path = require('path');
 const cors = require('cors');
 const {logger} = require("./middlewares/logger");
 const {errorHandler} = require("./middlewares/errorHandler");
+const {corsOptions} = require("./configs/corsOptions");
 const PORT = process.env.PORT || 3500;
 
-const whiteList = [
-	'https://www.yoursite.com',
-	'http://127.0.0.1:5500',
-	'http://localhost:3500',
-	'http://localhost:3000',
-];
-
-// config the cors
-const corsOptions = {
-	origin: (origin, callback) => {
-		if (whiteList.indexOf(origin) !== -1 || !origin) {
-			// no error and send yes
-			callback(null, true);
-		} else {
-			callback(new Error('Not allowed by CORS'))
-		}
-	},
-	optionsSuccessStatus: 200
-};
 
 const app = express();
 
@@ -44,7 +26,7 @@ app.use(express.json());
  * serve static files
  */
 app.use('/', express.static(path.join(__dirname, '/public')));
-app.use('/subdir', express.static(path.join(__dirname, '/public')))
+
 
 /**
  * custom middleware logger
@@ -56,14 +38,14 @@ app.use(logger);
  */
 app.use(cors(corsOptions));
 
+// config routes
 app.use('/', require('./routes/root'));
-app.use('/subdir', require('./routes/subdir'));
 app.use('/employees', require('./routes/api/employees'));
 
 app.get('*', (req, res) => {
 	res.status(404);
 	if (req.accepts('html')) {
-		res.sendFile(path.join(__dirname, 'views', '404.html'))
+		res.sendFile(path.join(__dirname, 'views', 'public', '404.html'))
 	}
 	else if (req.accepts('json')) {
 		res.json({error: '404 Not found'})

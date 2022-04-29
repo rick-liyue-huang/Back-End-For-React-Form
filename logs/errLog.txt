@@ -3,3 +3,10 @@
 20220429	16:48:01	477217c9-4821-4fd8-8b9a-ffe061b98bed	Error: ENOENT: no such file or directory, stat '/Users/rickhuang/WebstormProjects/back-react-form/views/public/subdir/index.html'
 20220429	16:48:05	a69dcdba-d5ab-4793-9cfe-fb521b6cd5c6	Error: ENOENT: no such file or directory, stat '/Users/rickhuang/WebstormProjects/back-react-form/views/public/subdir/index.html'
 20220429	17:37:07	24384419-859d-4090-9e0d-05d4d6ebe51a	Error: ENOENT: no such file or directory, stat '/Users/rickhuang/WebstormProjects/back-react-form/routes/views'
+20220429	18:24:10	a3718f99-bc2c-4a2d-adc8-29f63c9dba82	Error: ENOENT: no such file or directory, stat '/Users/rickhuang/WebstormProjects/back-react-form/views/404.html'
+20220429	18:24:53	7dd2289c-edf6-425c-b942-d1bc2f5e5d55	Error: ENOENT: no such file or directory, stat '/Users/rickhuang/WebstormProjects/back-react-form/views/404.html'
+20220429	18:24:58	f2f784f9-0be7-48d1-bb5e-499a35c2300e	Error: ENOENT: no such file or directory, stat '/Users/rickhuang/WebstormProjects/back-react-form/views/404.html'
+20220429	18:25:19	65386d91-6a4b-483c-a4ee-77f414359f84	Error: ENOENT: no such file or directory, stat '/Users/rickhuang/WebstormProjects/back-react-form/views/404.html'
+20220429	18:30:30	dd970ba3-b586-44d0-b8b0-368607d90f6a	URIError: Failed to decode param '/%PUBLIC_URL%/favicon.ico'
+20220429	18:31:55	622c0d35-3365-424e-a735-8c1ed8a503dd	URIError: Failed to decode param '/%PUBLIC_URL%/favicon.ico'
+20220429	19:00:05	4661fee2-33d7-4314-8d3c-1a684dab53e3	SyntaxError: Unexpected token , in JSON at position 63
