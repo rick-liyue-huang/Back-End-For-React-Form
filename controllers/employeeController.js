@@ -1,4 +1,3 @@
-const e = require("express");
 
 const data = {
 	employees: require('../model/employees.json'),
