@@ -34,9 +34,15 @@ const handleRefreshToken = (req, res) => {
 				return res.sendStatus(403)
 			}
 
+			const roles = Object.values(foundUser.roles);
+
 			// get back accessToken from refreshToken
 			const accessToken = jwt.sign(
-				{'username': decode.username},
+				{'UserInfo': {
+							'username': decode.username,
+							'roles': roles
+						}
+					},
 				process.env.ACCESS_TOKEN_SECRET,
 				{expiresIn: '30s'}
 			);

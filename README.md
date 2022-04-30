@@ -26,5 +26,22 @@ xss: cross site scripting
 csrf: cs request forgery
 
 
+Authentication vs Authorization
+
+Authentication:
+refer to the process of verifying who someomeis
+act as login
+
+Authorization:
+refer to the process of verify what resources a user has access to
+
+
+so JWT
+confirm authentication
+allow access to API endpoint
+endponts provide data resources
+user authorization header
+
+
 
 `require('crypto').randomBytes(64).toString('hex')` to get token secret key
