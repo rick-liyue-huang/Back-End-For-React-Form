@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
@@ -8,7 +8,12 @@ const {corsOptions} = require("./configs/corsOptions");
 const {jwtVerifyHandler} = require("./middlewares/jwtVerifyHandler");
 const cookieParser = require('cookie-parser');
 const {credentials} = require("./middlewares/credentials");
+const mongoose = require('mongoose');
+const {connectDB} = require('./configs/dbConn')
 const PORT = process.env.PORT || 3500;
+
+// connect db
+connectDB();
 
 
 const app = express();
@@ -78,7 +83,11 @@ app.get('*', (req, res) => {
 
 app.use(errorHandler);
 
+mongoose.connection.once('open', () => {
+	console.log('Connect with MongoDB');
+	app.listen(PORT, () => console.log(`this server is running on port of ${PORT}`));
+})
 
-app.listen(PORT, () => console.log(`this server is running on port of ${PORT}`));
+
 
 
