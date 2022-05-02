@@ -7,7 +7,7 @@ const jwtVerifyHandler = (req, res, next) => {
 	// const authHeader = req.headers['authorization'];
 	const authHeader = req.headers.authorization || req.headers.Authorization
 
-	if (!authHeader?.startsWith('Bearer')) {
+	if (!authHeader?.startsWith('Bearer ')) {
 		return res.status(401).json({message: 'UnAuthorization, no token'})
 	}
 	console.log(authHeader); // Bearer token
